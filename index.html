@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orater's Academy | Premium Debate and Public Speaking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Orater's Academy home">
+      <span class="brand-mark">OA</span>
+      <span>Orater's Academy</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#coach">Coach</a>
+      <a href="#ai-coach">AI Coach</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#debate">Debate Lab</a>
+      <a href="#classes">Classes</a>
+      <a href="#join">Join</a>
+    </nav>
+    <a class="header-cta" href="#join">Start</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Premium debate and public speaking studio</p>
+        <h1 id="hero-title">Orater's Academy</h1>
+        <p class="hero-copy">A high-touch training space where students learn to argue with evidence, write persuasive speeches, and command the room with calm confidence.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#coach">Build a Speech</a>
+          <a class="secondary-button" href="#classes">Take Classes</a>
+        </div>
+        <div class="hero-metrics" aria-label="Academy highlights">
+          <div>
+            <strong>Live</strong>
+            <span>Google Meet coaching</span>
+          </div>
+          <div>
+            <strong>AI</strong>
+            <span>Speech refinement lab</span>
+          </div>
+          <div>
+            <strong>1:1</strong>
+            <span>Private mentor feedback</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="premium-strip" aria-label="Premium learning outcomes">
+      <article>
+        <span>01</span>
+        <h3>Persuasive Structure</h3>
+        <p>Students learn to turn scattered ideas into speeches with a strong opening, evidence, and memorable close.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Stage Presence</h3>
+        <p>Voice, posture, pauses, and eye contact are coached until speaking feels clear instead of rushed.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Debate Thinking</h3>
+        <p>Every class builds reasoning, rebuttal, listening, and respectful disagreement.</p>
+      </article>
+    </section>
+
+    <section class="tool-band" id="coach" aria-labelledby="coach-title">
+      <div class="section-heading">
+        <p class="eyebrow">Speech Coach</p>
+        <h2 id="coach-title">Turn an idea into a polished speaking plan.</h2>
+      </div>
+
+      <div class="coach-layout">
+        <form class="speech-form" id="speechForm">
+          <label>
+            Topic
+            <input id="topicInput" type="text" placeholder="Should students have homework?" value="Should students have homework?">
+          </label>
+          <label>
+            Audience
+            <select id="audienceInput">
+              <option>Classmates</option>
+              <option>Teachers</option>
+              <option>Parents</option>
+              <option>Competition judges</option>
+            </select>
+          </label>
+          <label>
+            Speaking time
+            <select id="timeInput">
+              <option value="1">1 minute</option>
+              <option value="2" selected>2 minutes</option>
+              <option value="3">3 minutes</option>
+              <option value="5">5 minutes</option>
+            </select>
+          </label>
+          <label>
+            Main point
+            <textarea id="pointInput" rows="4" placeholder="Write your strongest claim.">Homework should be limited because students need time to rest, read, and explore their own interests.</textarea>
+          </label>
+          <button class="primary-button full" type="submit">Generate Outline</button>
+        </form>
+
+        <article class="outline-panel" aria-live="polite">
+          <div class="panel-topline">
+            <span>Speaker's Outline</span>
+            <button class="icon-button" id="copyOutline" type="button" aria-label="Copy outline" title="Copy outline">Copy</button>
+          </div>
+          <div id="outlineOutput" class="outline-output"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ai-band" id="ai-coach" aria-labelledby="ai-title">
+      <div class="section-heading">
+        <p class="eyebrow">AI Speech Coach</p>
+        <h2 id="ai-title">Refine a speech with instant coaching points.</h2>
+      </div>
+
+      <div class="ai-layout">
+        <form class="ai-form" id="aiSpeechForm">
+          <label>
+            Paste your speech
+            <textarea id="speechDraft" rows="11" placeholder="Paste your speech here...">Good morning everyone. Today I am speaking about why students should read more books. Books are useful because they improve language and imagination. Many students spend too much time on screens. If we read books every day, we can become better thinkers and speakers. Thank you.</textarea>
+          </label>
+          <label>
+            Speaking style
+            <select id="speechTone">
+              <option>Confident and clear</option>
+              <option>Formal competition speech</option>
+              <option>Friendly classroom speech</option>
+              <option>Debate argument</option>
+            </select>
+          </label>
+          <button class="primary-button full" type="submit">Improve My Speech</button>
+        </form>
+
+        <article class="ai-result-panel" aria-live="polite">
+          <div class="panel-topline">
+            <span>Improved Speech</span>
+            <button class="icon-button" id="copyImprovedSpeech" type="button" aria-label="Copy improved speech" title="Copy improved speech">Copy</button>
+          </div>
+          <div class="ai-output" id="aiSpeechOutput"></div>
+        </article>
+
+        <article class="ai-points-panel" aria-live="polite">
+          <div class="panel-topline">
+            <span>Points to Improve</span>
+          </div>
+          <ul class="coach-points" id="coachPoints"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="curriculum" id="curriculum" aria-labelledby="curriculum-title">
+      <div class="section-heading">
+        <p class="eyebrow">Curriculum</p>
+        <h2 id="curriculum-title">A complete training path for young speakers.</h2>
+      </div>
+      <div class="lesson-grid">
+        <article class="lesson-card">
+          <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80" alt="Students collaborating around a table">
+          <div>
+            <span>Module 01</span>
+            <h3>Argument Structure</h3>
+            <p>Claim, reason, evidence, impact. Students learn how to make ideas easy to follow.</p>
+          </div>
+        </article>
+        <article class="lesson-card">
+          <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80" alt="Student speaking in a classroom setting">
+          <div>
+            <span>Module 02</span>
+            <h3>Delivery Skills</h3>
+            <p>Voice, pauses, posture, eye contact, and expression without sounding rehearsed.</p>
+          </div>
+        </article>
+        <article class="lesson-card">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80" alt="Students listening during a presentation">
+          <div>
+            <span>Module 03</span>
+            <h3>Rebuttal Practice</h3>
+            <p>Listen carefully, spot weak links, and answer opposing arguments respectfully.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="debate-lab" id="debate" aria-labelledby="debate-title">
+      <div class="section-heading">
+        <p class="eyebrow">Debate Lab</p>
+        <h2 id="debate-title">Practice fast thinking with calm control.</h2>
+      </div>
+      <div class="debate-board">
+        <div class="motion-card">
+          <span>Today's Motion</span>
+          <p id="motionText">Schools should replace exams with project-based assessment.</p>
+          <button class="secondary-button" id="newMotion" type="button">New Motion</button>
+        </div>
+        <div class="prep-card">
+          <div class="timer-display" id="timerDisplay">02:00</div>
+          <div class="timer-controls">
+            <button class="primary-button" id="startTimer" type="button">Start Prep</button>
+            <button class="secondary-button" id="resetTimer" type="button">Reset</button>
+          </div>
+        </div>
+        <div class="prompt-list">
+          <h3>Prep Checklist</h3>
+          <label><input type="checkbox"> Define key words</label>
+          <label><input type="checkbox"> Write two claims</label>
+          <label><input type="checkbox"> Add one example</label>
+          <label><input type="checkbox"> Predict the other side</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="classes-band" id="classes" aria-labelledby="classes-title">
+      <div class="section-heading">
+        <p class="eyebrow">Live Classes</p>
+        <h2 id="classes-title">Choose a premium class and connect on Google Meet.</h2>
+      </div>
+      <div class="classes-layout">
+        <form class="class-form" id="classForm">
+          <label>
+            Student name
+            <input id="className" type="text" placeholder="Your name">
+          </label>
+          <label>
+            Class type
+            <select id="classType">
+              <option>Public Speaking Basics</option>
+              <option>Debate Foundations</option>
+              <option>Speech Writing Workshop</option>
+              <option>Competition Practice</option>
+            </select>
+          </label>
+          <label>
+            Preferred day
+            <select id="classDay">
+              <option>Monday</option>
+              <option>Wednesday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+            </select>
+          </label>
+          <label>
+            Time slot
+            <select id="classTime">
+              <option>5:00 PM - 5:45 PM</option>
+              <option>6:00 PM - 6:45 PM</option>
+              <option>7:00 PM - 7:45 PM</option>
+              <option>10:00 AM - 10:45 AM</option>
+            </select>
+          </label>
+          <button class="primary-button full" type="submit">Create Class Card</button>
+        </form>
+
+        <div class="class-side">
+          <article class="pricing-panel" aria-labelledby="pricing-title">
+            <p class="eyebrow">Price List</p>
+            <h3 id="pricing-title">Class Plans</h3>
+            <div class="price-grid">
+              <div class="price-card">
+                <span>Trial Class</span>
+                <strong>Free</strong>
+                <p>One 30-minute introduction session.</p>
+              </div>
+              <div class="price-card featured-price">
+                <span>Group Classes</span>
+                <strong>Rs 1,499/mo</strong>
+                <p>Weekly debate and speech practice.</p>
+              </div>
+              <div class="price-card">
+                <span>1-on-1 Coaching</span>
+                <strong>Rs 799/class</strong>
+                <p>Personal feedback for speeches and competitions.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="meet-panel" aria-live="polite">
+            <div class="meet-icon" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div>
+              <p class="eyebrow">Google Meet Ready</p>
+              <h3 id="meetTitle">Public Speaking Basics</h3>
+              <p id="meetDetails">Choose a class to prepare a live session card.</p>
+            </div>
+            <div class="meet-actions">
+              <a class="primary-button" id="meetLink" href="https://meet.google.com/new" target="_blank" rel="noopener">Open Google Meet</a>
+              <a class="secondary-button" id="calendarLink" href="https://calendar.google.com/calendar/u/0/r/eventedit" target="_blank" rel="noopener">Add to Calendar</a>
+              <a class="whatsapp-button" id="whatsappLink" href="https://wa.me/910000000000?text=Hello%20Orater%27s%20Academy%2C%20I%20want%20to%20ask%20about%20classes." target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+            <p class="meet-note">Use Google Meet to create or join the live class room. Replace the WhatsApp placeholder number with the academy phone number when ready.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="whatsapp-strip" aria-label="WhatsApp enquiry">
+      <div>
+        <p class="eyebrow">Quick Enquiry</p>
+        <h2>Ask about batches, fees, or trial classes on WhatsApp.</h2>
+      </div>
+      <a class="whatsapp-button large" id="whatsappQuickLink" href="https://wa.me/910000000000?text=Hello%20Orater%27s%20Academy%2C%20I%20want%20details%20about%20classes%20and%20fees." target="_blank" rel="noopener">Message on WhatsApp</a>
+    </section>
+
+    <section class="results-band" aria-label="Student outcomes">
+      <div class="section-heading">
+        <p class="eyebrow">Student Outcomes</p>
+        <h2>Designed for confidence that shows.</h2>
+      </div>
+      <div class="results-grid">
+        <article>
+          <strong>Clearer speech writing</strong>
+          <p>Students leave with sharper openings, stronger evidence, and cleaner conclusions.</p>
+        </article>
+        <article>
+          <strong>Better debate response</strong>
+          <p>They learn how to listen, find weak logic, and respond without becoming aggressive.</p>
+        </article>
+        <article>
+          <strong>Presentation confidence</strong>
+          <p>Repeated delivery practice builds steady voice, posture, and timing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="join-band" id="join" aria-labelledby="join-title">
+      <div>
+        <p class="eyebrow">For Schools and Students</p>
+        <h2 id="join-title">Build confident speakers one session at a time.</h2>
+        <p>Orater's Academy can run as a classroom club, competition prep program, or personal coaching track for students who want to speak with purpose.</p>
+      </div>
+      <form class="join-form">
+        <label>
+          Student name
+          <input type="text" placeholder="Your name">
+        </label>
+        <label>
+          Goal
+          <select>
+            <option>Public speaking confidence</option>
+            <option>Debate competition prep</option>
+            <option>Speech writing help</option>
+          </select>
+        </label>
+        <button class="primary-button full" type="button">Request a Trial Class</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Orater's Academy</span>
+    <span>Speak clearly. Think sharply. Lead respectfully.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
